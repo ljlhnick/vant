@@ -26,8 +26,12 @@
   --van-button-danger-background-color: @button-danger-background-color;
   --van-button-danger-border-color: @button-danger-border-color;
   --van-button-warning-color: @button-warning-color;
+  --van-button-dashed-color: @button-dashed-color;
+  --van-button-link-color: @button-link-color;
   --van-button-warning-background-color: @button-warning-background-color;
+  --van-button-dashed-background-color: @button-dashed-bakcground-color;
   --van-button-warning-border-color: @button-warning-border-color;
+  --van-button-dashed-border-color: @button-dashed-border-color;
   --van-button-border-width: @button-border-width;
   --van-button-border-radius: @button-border-radius;
   --van-button-round-border-radius: @button-round-border-radius;
@@ -111,6 +115,27 @@
     background-color: var(--van-button-warning-background-color);
     border: var(--van-button-border-width) solid
       var(--van-button-warning-border-color);
+  }
+
+  &--dashed {
+    color: var(--van-button-dashed-color);
+    background: var(--van-button-dashed-background-color);
+    border: var(--van-button-border-width) dashed
+      var(--van-button-dashed-border-color);
+  }
+
+  &--text {
+    color: var(--van-button-dashed-color);
+    background: var(--van-button-default-background-color);
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &--link {
+    color: var(--van-button-link-color);
+    background: var(--van-button-default-background-color);
+    border-color: transparent;
+    box-shadow: none;
   }
 
   &--plain {

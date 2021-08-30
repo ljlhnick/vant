@@ -20,7 +20,10 @@ export type ButtonType =
   | 'primary'
   | 'success'
   | 'warning'
-  | 'danger';
+  | 'danger'
+  | 'dashed'
+  | 'text'
+  | 'link';
 
 export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
 
