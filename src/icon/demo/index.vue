@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import icons from '@vant/icons';
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Notify } from '../../notify';
@@ -92,11 +91,14 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
       <demo-block :title="t('basicUsage')">
         <van-row>
           <van-col span="6" @click="copy(demoIcon)">
-            <van-icon :name="demoIcon" />
+            <van-icon :name="demoIcon" spin />
           </van-col>
           <van-col span="6" @click="copy(demoImage)">
-            <van-icon :name="demoImage" />
+            <van-icon :name="demoImage" rotate="180" />
           </van-col>
+          <!-- <van-col span="6">
+            <van-icon class-prefix="icon" name="weixiu" />
+          </van-col> -->
         </van-row>
       </demo-block>
 

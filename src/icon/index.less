@@ -6,4 +6,22 @@
     height: 1em;
     object-fit: contain;
   }
+  &-spin {
+    animation: changDeg 2s linear 0.2s infinite;
+  }
+}
+
+@keyframes changDeg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 引入第三方或自定义的字体图标样式 */
+@font-face {
+  font-family: 'icon';
+  src: url('../assets/iconfont.ttf') format('truetype');
 }
