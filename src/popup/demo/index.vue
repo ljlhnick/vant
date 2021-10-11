@@ -46,8 +46,14 @@ const showCustomIconPosition = ref(false);
 <template>
   <demo-block card :title="t('basicUsage')">
     <van-cell :title="t('buttonBasic')" is-link @click="showBasic = true" />
-    <van-popup v-model:show="showBasic" :style="{ padding: '30px 50px' }">
-      {{ t('content') }}
+    <van-popup
+      v-model:show="showBasic"
+      :style="{ padding: '5px 10px' }"
+      size="middle"
+    >
+      <!-- {{ t('content') }} -->
+      <h3>展示弹出标题</h3>
+      <p :style="{ marginTop: '5px' }">展示弹出内容111</p>
     </van-popup>
   </demo-block>
 
