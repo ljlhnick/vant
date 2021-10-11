@@ -30,6 +30,8 @@ import { Overlay } from '../overlay';
 
 export type PopupPosition = 'top' | 'left' | 'bottom' | 'right' | 'center' | '';
 
+export type PopupSize = 'small' | 'middle' | 'large' | '';
+
 export type PopupCloseIconPosition =
   | 'top-left'
   | 'top-right'
@@ -63,6 +65,10 @@ export default defineComponent({
     closeIconPosition: {
       type: String as PropType<PopupCloseIconPosition>,
       default: 'top-right',
+    },
+    size: {
+      type: String as PropType<PopupSize>,
+      default: '',
     },
   }),
 
@@ -177,7 +183,7 @@ export default defineComponent({
     const onClosed = () => emit('closed');
 
     const renderPopup = lazyRender(() => {
-      const { round, position, safeAreaInsetBottom } = props;
+      const { round, position, safeAreaInsetBottom, size } = props;
       return (
         <div
           v-show={props.show}
@@ -187,6 +193,7 @@ export default defineComponent({
             bem({
               round,
               [position]: position,
+              [size]: size,
             }),
             { 'van-safe-area-bottom': safeAreaInsetBottom },
           ]}
