@@ -5,7 +5,11 @@ import { Toast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
-    actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
+    actions: [
+      { text: '选项一', disabled: true },
+      { text: '选项二' },
+      { text: '选项三' },
+    ],
     shortActions: [{ text: '选项一' }, { text: '选项二' }],
     actionsWithIcon: [
       { text: '选项一', icon: 'add-o' },
@@ -107,6 +111,8 @@ const onSelect = (action: { text: string }) => Toast(action.text);
       theme="dark"
       :actions="t('actions')"
       @select="onSelect"
+      :overlay="true"
+      :close-on-click-action="false"
     >
       <template #reference>
         <van-button type="primary">
