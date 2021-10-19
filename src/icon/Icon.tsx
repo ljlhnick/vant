@@ -23,6 +23,8 @@ export default defineComponent({
       type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'i',
     },
+    spin: Boolean,
+    rotate: Number,
   },
 
   setup(props, { slots }) {
@@ -33,7 +35,7 @@ export default defineComponent({
     );
 
     return () => {
-      const { tag, dot, name, size, badge, color } = props;
+      const { tag, dot, name, size, badge, color, spin, rotate } = props;
       const isImageIcon = isImage(name);
 
       return (
@@ -44,10 +46,12 @@ export default defineComponent({
           class={[
             classPrefix.value,
             isImageIcon ? '' : `${classPrefix.value}-${name}`,
+            spin ? `${classPrefix.value}-spin` : '',
           ]}
           style={{
             color,
             fontSize: addUnit(size),
+            transform: `rotate(${rotate}deg)`,
           }}
         >
           {slots.default?.()}

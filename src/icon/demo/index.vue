@@ -92,10 +92,18 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
       <demo-block :title="t('basicUsage')">
         <van-row>
           <van-col span="6" @click="copy(demoIcon)">
-            <van-icon :name="demoIcon" />
+            <van-icon :name="demoIcon" spin />
           </van-col>
           <van-col span="6" @click="copy(demoImage)">
-            <van-icon :name="demoImage" />
+            <van-icon :name="demoImage" rotate="180" />
+          </van-col>
+          <!-- 自定义图标 -->
+          <van-col span="6">
+            <van-icon class-prefix="iconfont" name="weixiu"  class="icon-weixiu"/>
+          </van-col>
+         <!-- vant-icon  common.css -->
+          <van-col span="6">
+            <van-icon name="eye-o"/>
           </van-col>
         </van-row>
       </demo-block>
@@ -217,7 +225,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
     }
   }
 
-  .van-icon {
+  .van-icon, .iconfont {
     margin: 16px 0 16px;
     color: var(--van-text-color);
     font-size: 32px;
